@@ -28,3 +28,5 @@ Route::get('/schools/{schoolnaam}/classroom/{lokaalnaam}', [ClassroomController:
 Route::get('/results', [ResultController::class, 'index'])->name('show.meetwaardes');
 Route::get('/results/{devicenaam}', [ResultController::class, 'show'])->name('show.meetwaardes');
 Route::get('/schools', [SchoolController::class, 'index'])->name('show.scholen');
+
+Route::put('/update_result/{id}', [ResultController::class, 'updateResult']);

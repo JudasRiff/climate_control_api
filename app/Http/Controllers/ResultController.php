@@ -27,4 +27,16 @@ class ResultController extends Controller
               ], 404);
         }
     }
+
+    public function updateResult(Request $request, $id) {
+        $temp = $request->input('temperatuur');
+        $resultset = Result::raw("UPDATE gebruikers SET voorkeurTemperatuur = $temp 
+        WHERE gebruikersnaam = '$id'");
+
+        var_dump($resultset);
+
+        return response()->json([
+            "message" => "records updated successfully"
+        ], 200);
+    }
 }

@@ -59,12 +59,12 @@ class ResultController extends Controller
         $people =      $decoded['uplink_message']['decoded_payload']['digital_in_3'];
 
         Result::insert([
-            'apparaatNaam' => $device,
-            'datumTijd' => $time,
-            'Co2' => $co2,
+            'apparaatnaam' => $device,
+            'datumtijd' => $time,
+            'co2' => $co2,
             'luchtvochtigheid' => $humidity,
             'temperatuur' => $temperature,
-            'aantalMensen' => $people
+            'aantalmensen' => $people
         ]);
 
         return response('Record added', 200);

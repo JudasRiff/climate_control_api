@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\DeviceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,9 @@ use App\Http\Controllers\ResultController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/add_device', function() {
+    return view('add_device');
+});
+
+Route::post('/new_device', [DeviceController::class, 'addDevice']);

@@ -44,6 +44,8 @@ class Device extends Model
         }
         else {
             echo "Dit apparaat bestaat al";
+
+            header("refresh:5;url=/add_device");
         }
     }
 }
